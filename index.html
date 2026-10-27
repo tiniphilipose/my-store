@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Store | Fashion and accessories</title>
+  <meta name="description" content="Handbags, jewellery, wallets, kids items and gifts. Order on WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="#top" id="brandName">Your Store</a>
+    <label class="search">
+      <span class="visually-hidden">Search products</span>
+      <input id="searchInput" type="search" placeholder="Search bags, jewellery, gifts" autocomplete="off">
+    </label>
+    <button class="cart-btn" id="openCart" type="button" aria-label="Open cart">
+      Cart <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <section class="hero" aria-label="Featured collections">
+      <div class="slides" id="slides"></div>
+      <div class="dots" id="dots" role="tablist" aria-label="Choose slide"></div>
+    </section>
+
+    <nav class="cats" aria-label="Product categories">
+      <div class="cats-inner" id="cats"></div>
+    </nav>
+
+    <section class="shop" id="shop">
+      <div class="shop-head">
+        <h2 id="shopTitle">All products</h2>
+        <label class="sort">
+          <span class="visually-hidden">Sort products</span>
+          <select id="sortSelect">
+            <option value="featured">Featured</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+            <option value="discount">Biggest discount</option>
+          </select>
+        </label>
+      </div>
+      <p class="result-count" id="resultCount" aria-live="polite"></p>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-copy">
+        <h2>About us</h2>
+        <p id="aboutText">We bring you handpicked bags, jewellery and everyday accessories at honest prices. Message us on WhatsApp to order, and we will confirm availability and delivery.</p>
+      </div>
+      <div class="contact" id="contact"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p id="footerText"></p>
+  </footer>
+
+  <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a>
+
+  <!-- Product details -->
+  <dialog id="productDialog" class="modal" aria-labelledby="pdName">
+    <button class="close" type="button" data-close aria-label="Close">&times;</button>
+    <div class="modal-body" id="productBody"></div>
+  </dialog>
+
+  <!-- Cart drawer -->
+  <dialog id="cartDialog" class="drawer" aria-labelledby="cartTitle">
+    <div class="drawer-head">
+      <h2 id="cartTitle">Your cart</h2>
+      <button class="close" type="button" data-close aria-label="Close cart">&times;</button>
+    </div>
+    <div class="drawer-list" id="cartList"></div>
+    <div class="drawer-foot">
+      <div class="total"><span>Total</span><strong id="cartTotal">0</strong></div>
+      <button class="btn btn-wa" id="checkoutBtn" type="button">Order on WhatsApp</button>
+      <button class="link-btn" id="clearCart" type="button">Empty cart</button>
+    </div>
+  </dialog>
+
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
