@@ -214,6 +214,25 @@
   function fillStoreInfo() {
     document.title = `${STORE.name} | ${STORE.tagline}`;
     $("#brandName").textContent = STORE.name;
+    $("#profileStoreName").textContent = STORE.name;
+    $("#profileTagline").textContent = STORE.tagline;
+    const initials = STORE.name.split(/\\s+/).filter(Boolean).slice(0, 2).map((part) => part[0]).join("").toUpperCase() || "S";
+    $("#storeLogoFallback").textContent = initials;
+    if (STORE.logo) {
+      const logo = $("#storeLogo");
+      logo.src = STORE.logo;
+      logo.alt = `${STORE.name} logo`;
+      logo.hidden = false;
+      logo.addEventListener("error", () => { logo.hidden = true; }, { once: true });
+      logo.addEventListener("load", () => { $("#storeLogoFallback").hidden = true; }, { once: true });
+    }
+    const phoneDigits = String(STORE.phone || STORE.whatsapp || "").replace(/[^+\\d]/g, "");
+    $("#profilePhone").href = phoneDigits ? `tel:${phoneDigits}` : "#";
+    $("#profilePhone").hidden = !phoneDigits;
+    $("#profileWhatsApp").href = waLink(`Hi ${STORE.name}, I have a question.`);
+    $("#profileMap").href = STORE.mapLink || "https://maps.google.com";
+    $("#profileGoogleReview").href = STORE.googleReview || "#";
+    $("#profileGoogleReview").hidden = !STORE.googleReview || STORE.googleReview === "https://g.page/r/";
     $("#waFloat").href = waLink(`Hi ${STORE.name}, I have a question.`);
     $("#contact").innerHTML = `
       <a href="${waLink("Hi " + STORE.name)}" target="_blank" rel="noopener">WhatsApp: ${esc(STORE.phoneDisplay)}</a>

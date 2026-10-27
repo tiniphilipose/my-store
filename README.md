@@ -13,3 +13,10 @@
 
 ## WhatsApp number format
 Country code + number, digits only. Example India: 919876543210
+
+
+## Store profile section under the slider
+- Add your store logo as `images/store-logo.png` (or change `STORE.logo` in `js/products.js`).
+- Update `STORE.name` and `STORE.tagline`.
+- Update `STORE.phone`, `STORE.whatsapp`, `STORE.mapLink`, and `STORE.googleReview` in `js/products.js`.
+- For Google reviews, paste your actual Google review link into `STORE.googleReview`.

@@ -6,6 +6,9 @@
 const STORE = {
   name: "Your Store",                 // shown in header and footer
   tagline: "Where style begins",
+  logo: "images/store-logo.png",       // add your logo image to the images folder
+  phone: "+919999999999",              // phone number with country code, for example +971...
+  googleReview: "https://g.page/r/",    // replace with your Google review link
   currency: "₹",
   whatsapp: "919999999999",           // country code + number, digits only (no + or spaces)
   phoneDisplay: "+91 99999 99999",
