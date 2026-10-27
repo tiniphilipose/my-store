@@ -13,7 +13,7 @@ const STORE = {
   whatsapp: "919999999999",           // country code + number, digits only (no + or spaces)
   phoneDisplay: "+91 99999 99999",
   email: "hello@yourstore.com",
-  address: "Shop No. 1, Main Road, Your City",
+  address: "Shop No. 1, Main Road, Your City1",
   mapLink: "https://maps.google.com",
   instagram: "https://instagram.com/",
   slides: [
